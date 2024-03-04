@@ -1,0 +1,31 @@
+nav {
+    height: 120px;
+    width: 100%;
+    background-color: #4056A1;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5em;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+  nav span, nav a {
+    font-family: 'Bungee', sans-serif;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+  nav .tweet-text {
+    display: flex;
+    align-items: center;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1em;
+  }
+  
+  nav .fa-angle-double-down {
+    margin-left: 10px;
+  }

@@ -1,0 +1,68 @@
+@import 'variables';
+
+nav {
+  height: $nav-height;
+  width: 100%;
+  background-color: $nav-background-color;
+  color: $nav-text-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $nav-padding;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  span, a {
+      font-family: $highlight-font-family;
+      color: $nav-text-color;
+      text-decoration: none;
+  }
+
+  .tweet-text {
+      display: flex;
+      align-items: center;
+      font-family: $base-font-family;
+      font-size: 1em;
+
+      .fa-angle-double-down {
+          margin-left: 40px;
+      }
+  }
+}
+
+#compose-btn {
+  cursor: pointer;
+  background-color: $compose-btn-background;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+
+  &:hover {
+      background-color: $compose-btn-hover-background;
+  }
+}
+
+#scroll-to-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: $scroll-btn-background-color;
+  color: $scroll-btn-color;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  display: none;
+  opacity: 0.8;
+
+  &:hover {
+      opacity: 1;
+  }
+}

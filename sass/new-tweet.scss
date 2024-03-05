@@ -1,0 +1,51 @@
+@import 'variables';
+
+.new-tweet {
+  margin: $new-tweet-margin;
+  width: $new-tweet-width;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  form {
+    background-color: $form-background-color;
+    border-radius: 20px;
+    padding: 20px;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
+    border: 1px solid $textarea-border-color;
+    border-radius: 10px;
+  }
+  
+  button {
+    background-color: $button-background-color;
+    color: $button-text-color;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  
+  .counter {
+    float: right;
+    margin-right: 10px;
+  }
+
+  .error-message {
+    color: $error-message-color;
+    background-color: $error-message-background;
+    border-left: 6px solid $error-message-border-color;
+    margin: 20px 0;
+    padding: 10px;
+    display: none;
+    border-radius: 5px;
+  }
+}

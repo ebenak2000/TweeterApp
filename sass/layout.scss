@@ -1,0 +1,32 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+ @import 'variables';
+
+ body {
+   font-family: $base-font-family;
+   font-weight: $base-font-weight;
+   color: $base-font-color;
+   background-color: $base-background-color;
+   font-size: $base-font-size;
+ }
+ 
+ main {
+   width: $main-width;
+   margin: 0 auto;
+   background-color: inherit;
+ }
+ 
+ .counter.invalid {
+   color: $invalid-color;
+ }
+ 
+ html {
+   box-sizing: border-box;
+ }
+ 
+ *, *:before, *:after {
+   box-sizing: inherit;
+ }

@@ -1,0 +1,22 @@
+@import 'variables';
+@import 'mixins';
+
+header {
+  @include vertical-center;
+  height: $header-height;
+  width: 100%;
+  flex-direction: column;
+  background-color: $primary-color;
+  background-image: url($header-image);
+  padding-top: $header-padding-top;
+}
+
+header img {
+  max-height: $avatar-max-height;
+  border-radius: 50%;
+}
+
+header h2 {
+  color: $secondary-color;
+  margin-top: $margin-top-standard;
+}

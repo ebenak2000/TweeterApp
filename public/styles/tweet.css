@@ -1,0 +1,43 @@
+/* header var */
+/* layout var */
+/* nav var */
+/* new-tweet var */
+/* tweet var */
+#tweet-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tweet {
+  border: 1px solid #e6ecf0;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+}
+.tweet header, .tweet footer {
+  display: flex;
+  align-items: center;
+}
+.tweet header div, .tweet footer div {
+  margin-left: 10px;
+}
+.tweet p {
+  margin: 10px 0;
+}
+.tweet footer i {
+  margin-right: 5px;
+}
+.tweet:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.tweet:hover i {
+  color: #28f7f4;
+}

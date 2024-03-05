@@ -21,19 +21,25 @@
     <link rel="stylesheet" href="/styles/header.css">
     <link rel="stylesheet" href="/styles/nav.css">
     <link rel="stylesheet" href="/styles/new-tweet.css">
-
+    <link rel="stylesheet" href= "/styles/tweet.css">
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
+    <button id="scroll-to-top-btn">↑</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-    <!-- Top nav bar (fixed) -->
     <nav>
+        <button id="compose-btn">Compose</button>
         <span>tweeter</span>
         <div class="tweet-text">
+            <div class="error-message" style="display: none;"></div>
             Write a new tweet!
             <i class="fa-solid fa-angles-down"></i>
         </div>
@@ -45,16 +51,16 @@
             <img src="/images/profile-hex.png">
         </div>
         <div>
-            <h2>Your Name</h2>
+            <h2>Evangelos Benak</h2>
         </div>
     </header>
 
     <!-- Main Content Area -->
     <main>
-        <h1>Main Content Area</h1>
-        <p>Tweeter Test text, let's see this.</p>
+        <h1>Limitless</h1>
+        <p>What are you thinking about today?</p>
         <section class="new-tweet">
-            <h2>Compose Tweet</h2>
+            <h2>Write a tweet!</h2>
             <form>
                 <label for="tweet-text">What are you humming about?</label>
                 <textarea name="text" id="tweet-text"></textarea>
@@ -63,6 +69,27 @@
                     <output name="counter" class="counter" for="tweet-text">140</output>
                 </div>
             </form>
+        </section>
+
+        <section id="tweet-container">
+            <article class="tweet">
+                <header>
+                    <img src="/images/profile-hex.png" alt="Users Prof Pic">
+                    <div>
+                        <h3>User Name</h3>
+                        <p>@userhandle</p>
+                    </div>
+                </header>
+                <p>Here is the content of the tweet...</p>
+                <footer>
+                    <span>10 days ago</span>
+                    <div>
+                        <i class="fas fa-flag"></i>
+                        <i class="fas fa-retweet"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </footer>
+            </article>
         </section>
     </main>
 </body>

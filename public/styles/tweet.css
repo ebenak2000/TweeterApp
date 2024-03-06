@@ -22,22 +22,54 @@
   border-radius: 10px;
   background-color: white;
 }
-.tweet header, .tweet footer {
+.layout {
   display: flex;
-  align-items: center;
+  flex-direction: column; /* Stack vertically on small devices */
 }
-.tweet header div, .tweet footer div {
-  margin-left: 10px;
+
+.header-area,
+.content-area {
+  width: 100%;
 }
-.tweet p {
-  margin: 10px 0;
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .layout {
+      flex-direction: row; /* Side by side for medium screens */
+  }
+  .header-area {
+      flex: 1;
+  }
+  .content-area {
+      flex: 2;
+      display: flex;
+      flex-direction: column; /* Keep the form and tweets stacked */
+  }
 }
-.tweet footer i {
-  margin-right: 5px;
+
+/* Large devices (desktops, 1024px and up) */
+@media (min-width: 1024px) {
+  .header-area,
+  .content-area {
+      width: 50%; /* Split screen space evenly */
+  }
+
+  /* Adjust the header area for large screens */
+  .header-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center the items for a better look */
+  }
+
+  /* More specific adjustments could be added here */
 }
-.tweet:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.tweet:hover i {
-  color: #28f7f4;
+
+/* Extra Large devices (large desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .header-area,
+  .content-area {
+      width: 40%; /* Allocate more space for content on very large screens */
+  }
+
+  /* Possible adjustments for even larger layouts */
 }

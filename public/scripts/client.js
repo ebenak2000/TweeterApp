@@ -3,13 +3,14 @@ const escapeText = function(str) {
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
 };
-
+// Function to create a tweet element using jQuery with escaped user data for safe rendering
 const createTweetElement = function(tweet) {
     const safeAvatar = escapeText(tweet.user.avatars);
     const safeName = escapeText(tweet.user.name);
     const safeHandle = escapeText(tweet.user.handle);
     const safeText = escapeText(tweet.content.text);
 
+    // Constructing tweet HTML element with safe data
     let $tweet = $(`
         <article class="tweet">
             <header>
@@ -35,21 +36,24 @@ const createTweetElement = function(tweet) {
 
 const renderTweets = function(tweets) {
     const $tweetContainer = $('#tweet-container');
-    $tweetContainer.empty();
-    tweets.forEach(tweet => {
-        const $tweet = createTweetElement(tweet);
-        $tweetContainer.append($tweet);
+    $tweetContainer.empty(); // Clear existing tweets
+
+    // Iterate over tweets in reverse order
+    tweets.slice().reverse().forEach(tweet => {
+        const $tweet = createTweetElement(tweet); // Create tweet element
+        $tweetContainer.append($tweet); // Append each tweet to the container
     });
 };
 
 $(document).ready(function() {
+    // Function to load tweets from the server
     const loadTweets = function() {
         $.ajax({
             url: '/tweets',
             method: 'GET',
             dataType: 'json',
             success: function(tweets) {
-                renderTweets(tweets);
+                renderTweets(tweets); // success: lets the tweets render for a successful fetch
             },
             error: function(err) {
                 console.error('Error fetching tweets:', err);
@@ -73,7 +77,7 @@ $(document).ready(function() {
             $errorMessage.text('Your tweet content is too long.').slideDown('fast');
             return;
         }
-
+        // Submit new tweet via AJAX
         $.ajax({
             url: '/tweets',
             method: 'POST',
@@ -91,6 +95,7 @@ $(document).ready(function() {
         });
     });
 
+    // utilizing the compose button
     $('#compose-btn').click(function() {
         $('.new-tweet').slideToggle('fast', function() {
             if ($('.new-tweet').is(':visible')) {
@@ -98,7 +103,7 @@ $(document).ready(function() {
             }
         });
     });
-
+    // Scroll event handler for showing scroll-to-top button
     $(window).scroll(function() {
         if ($(this).scrollTop() > 100) {
             $('#scroll-to-top-btn').fadeIn('fast');
@@ -106,13 +111,12 @@ $(document).ready(function() {
             $('#scroll-to-top-btn').fadeOut('fast');
         }
     });
-
+    // Click event handler for scroll-to-top button
     $('#scroll-to-top-btn').click(function() {
         $('html, body').animate({ scrollTop: 0 }, 'fast', function() {
             $('.new-tweet').slideDown('fast');
             $('.new-tweet textarea').focus();
         });
     });
-
     loadTweets();
 });

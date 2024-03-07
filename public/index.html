@@ -37,63 +37,48 @@
 <body>
     <!-- Navigation Bar -->
     <nav>
-        <button id="compose-btn">Compose</button> <!-- Compose new tweet button -->
-        <span>Tweeter</span> <!-- Site title -->
-        <div class="tweet-text">Write a new tweet!      <i class="fa-solid fa-angles-down"></i> <!-- Write a new tweet! with a Downward arrow icon -->
+        <span>Tweeter</span> <!-- Site title aligned to the left -->
+        <div class="tweet-text" id="compose-tweet-container">
+            Write a new tweet! <i class="fa-solid fa-angles-down" id="compose-btn"></i>
         </div>
     </nav>
 
-    <!-- Site Header -->
-    <header>
-        <div>
-            <img src="/images/profile-hex.png"> <!-- Profile image -->
-        </div>
-        <div>
-            <h2>Evangelos Benak</h2> <!-- User's name -->
-        </div>
-    </header>
-
     <!-- Main Content Area -->
-    <main>
-        <h1>Limitless</h1> <!-- Main page title -->
-        <p>What are you thinking about today?</p> <!-- Main page subtitle -->
-        
-        <!-- New Tweet Section -->
-        <section class="new-tweet">
-            <h2>Write a tweet!</h2> <!-- Section title -->
-            <div class="error-message" style="display: none;"></div> <!-- Hidden error message container -->
-            <form>
-                <label for="tweet-text">What are you humming about?</label> <!-- Textarea label -->
-                <textarea name="text" id="tweet-text"></textarea> <!-- Textarea for new tweet -->
+    <main class="layout">
+        <!-- Site Header -->
+        <div class="header-area">
+            <header>
                 <div>
-                    <button type="submit">Tweet</button> <!-- Submit button -->
-                    <output name="counter" class="counter" for="tweet-text">140</output> <!-- Character counter -->
+                    
                 </div>
-            </form>
-        </section>
+                <div class="tweet-compose-container">
+                    <div class="user-profiles">
+                        <img src="/images/profile-hex.png"> <!-- Profile image -->
+                        <h2>Evangelos Benak</h2> <!-- User's name -->
+                    </div>
+                </div>
+            </header>
+        </div>
 
-        <!-- Tweet Container -->
-        <section id="tweet-container">
-            <!-- Individual Tweet -->
-            <article class="tweet">
-                <header>
-                    <img src="/images/profile-hex.png" alt="User's Profile Pic"> <!-- User's profile picture -->
+        <!-- New Tweet Section and Tweet Container -->
+        <div class="content-area">
+            <section class="new-tweet">
+                <h2>Write a tweet!</h2> <!-- Section title -->
+                <div class="error-message" style="display: none;"></div> <!-- Hidden error message container -->
+                <form>
+                    <label for="tweet-text">What are you humming about?</label> <!-- Textarea label -->
+                    <textarea name="text" id="tweet-text"></textarea> <!-- Textarea for new tweet -->
                     <div>
-                        <h3>User Name</h3> <!-- User's name -->
-                        <p>@userhandle</p> <!-- User's handle -->
+                        <button type="submit">Tweet</button> <!-- Submit button -->
+                        <output name="counter" class="counter" for="tweet-text">140</output> <!-- Character counter -->
                     </div>
-                </header>
-                <p>Here is the content of the tweet...</p> <!-- Tweet content -->
-                <footer>
-                    <span>10 days ago</span> <!-- Tweet timestamp -->
-                    <div>
-                        <i class="fas fa-flag"></i> <!-- Flag icon -->
-                        <i class="fas fa-retweet"></i> <!-- Retweet icon -->
-                        <i class="fas fa-heart"></i> <!-- Heart icon -->
-                    </div>
-                </footer>
-            </article>
-        </section>
+                </form>
+            </section>
+
+            <section id="tweet-container">
+                <!-- Tweets will be dynamically inserted here -->
+            </section>
+        </div>
     </main>
 </body>
 </html>

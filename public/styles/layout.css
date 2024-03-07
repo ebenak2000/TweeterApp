@@ -27,7 +27,18 @@ body {
   font-family: 'Source Sans 3', sans-serif;
   font-size: 24px;
 }
+.tweet-compose-container {
+  display: flex;
+  align-items: center;
+}
 
+.user-profile {
+  margin-right: 20px; /* Adjust spacing as needed */
+}
+
+.new-tweet {
+  flex-grow: 1;
+}
 .layout {
   display: flex;
   flex-direction: column; /* Stack vertically on small devices */

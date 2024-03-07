@@ -8,10 +8,17 @@
   font-weight: 300;
 }
 main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
   width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
   background-color: inherit;
+  gap: 20px;
 }
+
 .counter.invalid {
   color: red;
 }
@@ -33,7 +40,8 @@ body {
 }
 
 .user-profile {
-  margin-right: 20px; /* Adjust spacing as needed */
+  min-width: 150px;
+  margin-right: 50px;
 }
 
 .new-tweet {
@@ -41,7 +49,9 @@ body {
 }
 .layout {
   display: flex;
-  flex-direction: column; /* Stack vertically on small devices */
+  flex-direction: column;
+  align-items: start;
+  gap: 20px; /* Stack vertically on small devices */
 }
 
 .header-area,
@@ -63,6 +73,7 @@ body {
       flex-direction: column; /* Keep the form and tweets stacked */
   }
 }
+
 @media (min-width: 1024px) {
   .header-area,
   .content-area {

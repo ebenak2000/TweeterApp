@@ -33,11 +33,6 @@ main {
     transition: background-color 0.3s;
     margin-right: 20px;
 }
-
-.tweet-text:hover {
-    background-color: #e8e8e8;
-}
-
 .tweet-text i {
     margin-left: 10px; /* Adds space between the text and the icon */
 }
@@ -61,14 +56,17 @@ main {
   }
   #compose-btn {
     background: transparent;
-    border: none;
-    color: white;
+    color: red;
     cursor: pointer;
     font-size: 1rem;
+    margin-top: 45px;
+    margin-left: -85px;
 }
 #compose-btn:hover,
 #compose-btn:focus {
     text-decoration: underline;
+    transition: transform 0.3s ease;
+    transform: translateY(-5px);
 }
 #scroll-to-top-btn {
   position: fixed;
